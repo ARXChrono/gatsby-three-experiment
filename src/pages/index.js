@@ -1,5 +1,6 @@
 import * as THREE from "three"
 import React, { useState, useRef, useEffect } from "react"
+import Helmet from "react-helmet"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, useRender, extend, useThree } from "react-three-fiber"
@@ -75,6 +76,10 @@ const Box = () => {
 
 export default () => (
   <>
+    <Helmet
+      title="Let's eat! | Gatsby Three Experiment by Shaun Wong"
+      defer={false}
+    />
     <div class="bg">
       <Canvas
         camera={[0, 0, 5]}

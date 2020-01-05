@@ -23,9 +23,15 @@ h1 {
   opacity: 0.85;
 }
 
+@media only screen and (max-width: 1280px) {
+  h1 {
+    font-size: 8em;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 6em;
+    font-size: 4em;
   }
 }
 
