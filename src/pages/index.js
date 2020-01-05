@@ -14,7 +14,9 @@ const Controls = () => {
     orbitRef.current.update();
   });
 
-  return <orbitControls args={[camera, gl.domElement]} ref={orbitRef} />;
+  return (
+    <orbitControls autoRotate args={[camera, gl.domElement]} ref={orbitRef} />
+  );
 };
 
 const Box = () => {
@@ -26,9 +28,9 @@ const Box = () => {
     color: hovered ? "crimson" : "gray"
   });
 
-  useRender(() => {
-    meshRef.current.rotation.y += 0.01;
-  });
+  // useRender(() => {
+  //   meshRef.current.rotation.y += 0.01;
+  // });
 
   return (
     <a.mesh
@@ -38,8 +40,10 @@ const Box = () => {
       onClick={() => setActive(!active)}
       scale={props.scale}
     >
+      <ambientLight />
+      <spotLight position={[0, 5, 10]} />
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <a.meshBasicMaterial attach="material" color={props.color} />
+      <a.meshPhysicalMaterial attach="material" color={props.color} />
     </a.mesh>
   );
 };
