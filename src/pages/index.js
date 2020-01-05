@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, useRender, extend, useThree } from "react-three-fiber"
 import { useSpring, a } from "react-spring/three"
 import "./style.css"
@@ -33,6 +34,14 @@ const Plane = () => {
       <meshPhysicalMaterial attach="material" color="gray" />
     </mesh>
   )
+}
+
+const City = () => {
+  const [model, setModel] = useState()
+  useEffect(() => {
+    new GLTFLoader().load("/scene.gltf", setModel)
+  }, [])
+  return null
 }
 
 const Box = () => {
@@ -73,5 +82,6 @@ export default () => (
     <Controls />
     <Box />
     <Plane />
+    <City />
   </Canvas>
 )
