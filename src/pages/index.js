@@ -5,7 +5,8 @@ import "./style.css";
 export default () => (
   <Canvas>
     <mesh>
-      <boxBufferGeometry attach="geometry" arcs={[1, 1, 1]} />
+      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+      <meshBasicMaterial attach="material" color="crimson" />
     </mesh>
   </Canvas>
 );
