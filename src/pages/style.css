@@ -8,6 +8,7 @@ canvas {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  user-select: none;
 }
 
 h1 {
@@ -16,7 +17,7 @@ h1 {
   left: 0;
   width: 100%;
   text-align: center;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12em;
   margin: 0;
   color: white;
@@ -48,18 +49,24 @@ h1 {
   position: absolute;
   top: 2rem;
   color: white;
-  font-size: 1.4em;
-  font-weight: 600;
+  font-size: 1.3em;
+  font-weight: 500;
   text-decoration: none;
   text-transform: capitalize;
   transition: 0.27s ease;
   opacity: 0.95;
+  background: linear-gradient(to bottom, #ff6b81 0%, #ff6b81 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 0px;
+  padding: 0.5rem;
 }
 
 .github-link:hover,
 .twitter-link:hover {
   opacity: 1;
   transform: scale(1.1);
+  background-size: 4px 50px;
 }
 
 .github-link {
