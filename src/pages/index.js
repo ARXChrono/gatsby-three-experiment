@@ -19,6 +19,9 @@ const Controls = () => {
   return (
     <orbitControls
       autoRotate
+      autoRotateSpeed={0.4}
+      minDistance={10}
+      maxDistance={12}
       maxPolarAngle={Math.PI / 3}
       minPolarAngle={Math.PI / 3}
       args={[camera, gl.domElement]}
@@ -41,7 +44,7 @@ const City = () => {
   useEffect(() => {
     new GLTFLoader().load("/scene.gltf", setModel)
   }, [])
-  return null
+  return model ? <primitive object={model.scene} /> : null
 }
 
 const Box = () => {
@@ -62,8 +65,6 @@ const Box = () => {
       scale={props.scale}
       castShadow
     >
-      <ambientLight />
-      <spotLight castShadow position={[0, 5, 10]} penumbra={1} />
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <a.meshPhysicalMaterial attach="material" color={props.color} />
     </a.mesh>
@@ -71,17 +72,20 @@ const Box = () => {
 }
 
 export default () => (
-  <Canvas
-    camera={[0, 0, 5]}
-    onCreated={({ gl }) => {
-      gl.shadowMap.enabled = true
-      gl.shadowMap.type = THREE.PCFSoftShadowMap
-    }}
-  >
-    <fog attach="fog" args={["white", 10, 20]} />
-    <Controls />
-    <Box />
-    <Plane />
-    <City />
-  </Canvas>
+  <>
+    <Canvas
+      camera={[0, 0, 5]}
+      onCreated={({ gl }) => {
+        gl.shadowMap.enabled = true
+        gl.shadowMap.type = THREE.PCFSoftShadowMap
+      }}
+    >
+      <ambientLight />
+      <spotLight castShadow position={[15, 20, 5]} penumbra={1} />
+      <fog attach="fog" args={["white", 10, 20]} />
+      <Controls />
+      <City />
+    </Canvas>
+    <h1>Hello</h1>
+  </>
 )
