@@ -15,7 +15,22 @@ const Controls = () => {
   });
 
   return (
-    <orbitControls autoRotate args={[camera, gl.domElement]} ref={orbitRef} />
+    <orbitControls
+      autoRotate
+      maxPolarAngle={Math.PI / 3}
+      minPolarAngle={Math.PI / 3}
+      args={[camera, gl.domElement]}
+      ref={orbitRef}
+    />
+  );
+};
+
+const Plane = () => {
+  return (
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
+      <planeBufferGeometry attach="geometry" args={[100, 100]} />
+      <meshPhysicalMaterial attach="material" color="gray" />
+    </mesh>
   );
 };
 
@@ -27,10 +42,6 @@ const Box = () => {
     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
     color: hovered ? "crimson" : "gray"
   });
-
-  // useRender(() => {
-  //   meshRef.current.rotation.y += 0.01;
-  // });
 
   return (
     <a.mesh
@@ -52,5 +63,6 @@ export default () => (
   <Canvas>
     <Controls />
     <Box />
+    <Plane />
   </Canvas>
 );
