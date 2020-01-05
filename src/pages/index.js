@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react"
 import * as THREE from "three"
+import React, { useState, useRef, useEffect } from "react"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Canvas, useRender, extend, useThree } from "react-three-fiber"
@@ -20,16 +20,17 @@ const Controls = () => {
     <orbitControls
       autoRotate
       autoRotateSpeed={0.4}
-      minDistance={10}
-      maxDistance={12}
-      maxPolarAngle={Math.PI / 3}
-      minPolarAngle={Math.PI / 3}
+      minDistance={4}
+      maxDistance={4}
+      minPolarAngle={Math.PI / 4}
+      maxPolarAngle={Math.PI / 6}
       args={[camera, gl.domElement]}
       ref={orbitRef}
     />
   )
 }
 
+//eslint-disable-next-line
 const Plane = () => {
   return (
     <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
@@ -39,7 +40,7 @@ const Plane = () => {
   )
 }
 
-const City = () => {
+const Food = () => {
   const [model, setModel] = useState()
   useEffect(() => {
     new GLTFLoader().load("/scene.gltf", setModel)
@@ -47,6 +48,7 @@ const City = () => {
   return model ? <primitive object={model.scene} /> : null
 }
 
+//eslint-disable-next-line
 const Box = () => {
   const meshRef = useRef()
   const [hovered, setHovered] = useState(false)
@@ -73,19 +75,30 @@ const Box = () => {
 
 export default () => (
   <>
-    <Canvas
-      camera={[0, 0, 5]}
-      onCreated={({ gl }) => {
-        gl.shadowMap.enabled = true
-        gl.shadowMap.type = THREE.PCFSoftShadowMap
-      }}
-    >
-      <ambientLight />
-      <spotLight castShadow position={[15, 20, 5]} penumbra={1} />
-      <fog attach="fog" args={["white", 10, 20]} />
-      <Controls />
-      <City />
-    </Canvas>
-    <h1>Hello</h1>
+    <div class="bg">
+      <Canvas
+        camera={[0, 0, 5]}
+        onCreated={({ gl }) => {
+          gl.shadowMap.enabled = true
+          gl.shadowMap.type = THREE.PCFSoftShadowMap
+        }}
+      >
+        <ambientLight />
+        <spotLight castShadow position={[15, 20, 5]} penumbra={1} />
+        <fog attach="fog" args={["white", 10, 20]} />
+        <Controls />
+        <Food />
+      </Canvas>
+      <h1>Let's eat!</h1>
+      <a
+        class="github-link"
+        href="https://github.com/ARXChrono/gatsby-three-experiment"
+      >
+        Github
+      </a>
+      <a class="twitter-link" href="https://twitter.com/devShaun">
+        Twitter
+      </a>
+    </div>
   </>
 )

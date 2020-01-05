@@ -8,24 +8,58 @@ canvas {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #000000;
-  background: linear-gradient(to top, #434343, #000000);
 }
 
 h1 {
   position: absolute;
-  bottom: 0;
+  bottom: 2rem;
   left: 0;
   width: 100%;
   text-align: center;
   font-weight: 800;
-  font-size: 20em;
+  font-size: 12em;
   margin: 0;
-  color: yellow;
+  color: white;
+  opacity: 0.85;
 }
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 12em;
+    font-size: 6em;
   }
+}
+
+.bg {
+  position: absolute;
+  background: radial-gradient(circle farthest-side, #ff6b81, #ff4757);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.github-link,
+.twitter-link {
+  position: absolute;
+  top: 2rem;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.27s ease;
+  opacity: 0.95;
+}
+
+.github-link:hover,
+.twitter-link:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.github-link {
+  left: 2rem;
+}
+
+.twitter-link {
+  right: 2rem;
 }
