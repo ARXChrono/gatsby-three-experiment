@@ -94,14 +94,30 @@ export default () => (
         <Controls />
         <Food />
       </Canvas>
-      <h1>Let's eat!</h1>
+      <h1>
+        <a
+          class="header-link"
+          href="https://www.google.com/maps/search/ramen/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Let's eat!
+        </a>
+      </h1>
       <a
         class="github-link"
         href="https://github.com/ARXChrono/gatsby-three-experiment"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Github
       </a>
-      <a class="twitter-link" href="https://twitter.com/devShaun">
+      <a
+        class="twitter-link"
+        href="https://twitter.com/devShaun"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Twitter
       </a>
     </div>
