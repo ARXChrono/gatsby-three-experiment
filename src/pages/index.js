@@ -98,7 +98,7 @@ export default () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Get Ramen
+          <span class="header-link__text">Get Ramen</span>
         </a>
       </h1>
       <div class="group-links">
