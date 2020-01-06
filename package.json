@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-three-experiment",
+  "name": "get-ramen-app",
   "private": true,
-  "description": "Just having fun with threejs on gatsby.",
-  "version": "0.1.0",
+  "description": "Just having fun with threejs on gatsby, which has turned into a funny idea.",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

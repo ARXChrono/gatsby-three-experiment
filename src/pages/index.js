@@ -76,10 +76,7 @@ const Box = () => {
 
 export default () => (
   <>
-    <Helmet
-      title="Let's eat! | Gatsby Three Experiment by Shaun Wong"
-      defer={false}
-    />
+    <Helmet title="Get Ramen!" defer={false} />
     <div class="bg">
       <Canvas
         camera={[0, 0, 5]}
@@ -101,25 +98,27 @@ export default () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Let's eat!
+          Get Ramen
         </a>
       </h1>
-      <a
-        class="github-link"
-        href="https://github.com/ARXChrono/gatsby-three-experiment"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Github
-      </a>
-      <a
-        class="twitter-link"
-        href="https://twitter.com/devShaun"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Twitter
-      </a>
+      <div class="group-links">
+        <a
+          class="github-link"
+          href="https://github.com/ARXChrono/gatsby-three-experiment"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
+        <a
+          class="twitter-link"
+          href="https://twitter.com/devShaun"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Twitter
+        </a>
+      </div>
     </div>
   </>
 )

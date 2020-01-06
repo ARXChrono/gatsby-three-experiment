@@ -13,32 +13,25 @@ canvas {
 
 h1 {
   position: absolute;
-  bottom: 2rem;
+  bottom: 2.5rem;
   left: 0;
   width: 100%;
   text-align: center;
   font-weight: 700;
-  font-size: 12em;
+  font-size: 8em;
   margin: 0;
   color: white;
-  opacity: 0.85;
   transition: 0.27s ease;
 }
 
 h1:hover {
   opacity: 1;
   transform: scale(1.1);
-  text-shadow: -4px 3px 0 tomato, -14px 7px 0 crimson;
-}
-
-.header-link {
-  color: white;
-  text-decoration: none;
 }
 
 @media only screen and (max-width: 1280px) {
   h1 {
-    font-size: 8em;
+    font-size: 6em;
   }
 }
 
@@ -46,6 +39,26 @@ h1:hover {
   h1 {
     font-size: 4em;
   }
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 3rem;
+  border: 3px solid white;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 0px;
+  transition: background 0.27s ease;
+}
+
+.header-link:hover {
+  background-size: 4px 100%;
 }
 
 .bg {
@@ -56,10 +69,15 @@ h1:hover {
   width: 100%;
 }
 
-.github-link,
-.twitter-link {
+.group-links {
   position: absolute;
   top: 2rem;
+  right: 2rem;
+  display: flex;
+}
+
+.github-link,
+.twitter-link {
   color: white;
   font-size: 1.3em;
   font-weight: 500;
@@ -67,18 +85,24 @@ h1:hover {
   text-transform: capitalize;
   transition: 0.27s ease;
   opacity: 0.95;
-  background: linear-gradient(to bottom, #ff6b81 0%, #ff6b81 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 0px;
   padding: 0.5rem;
+  border: 3px solid white;
+  margin-left: 1rem;
 }
 
 .github-link:hover,
 .twitter-link:hover {
   opacity: 1;
   transform: scale(1.1);
-  background-size: 4px 50px;
+  background-size: 4px 60px;
 }
 
 .github-link {
