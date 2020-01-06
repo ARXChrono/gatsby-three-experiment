@@ -29,6 +29,15 @@ h1:hover {
   transform: scale(1.1);
 }
 
+.header-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 3rem;
+  border: 3px solid white;
+  background: #2ed573;
+}
+
 @media only screen and (max-width: 1280px) {
   h1 {
     font-size: 4em;
@@ -39,15 +48,9 @@ h1:hover {
   h1 {
     font-size: 3em;
   }
-}
-
-.header-link {
-  position: relative;
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 3rem;
-  border: 3px solid white;
-  background: #2ed573;
+  .header-link {
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .header-link::before {
