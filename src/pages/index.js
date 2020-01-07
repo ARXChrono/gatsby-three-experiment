@@ -76,7 +76,10 @@ const Box = () => {
 
 export default () => (
   <>
-    <Helmet title="Get Ramen!" defer={false} />
+    <Helmet title="Get Ramen!" defer={false}>
+      <html lang="en" />
+      <meta name="description" content="Get Ramen!" />
+    </Helmet>
     <div class="bg">
       <Canvas
         camera={[0, 0, 5]}
