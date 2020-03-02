@@ -79,8 +79,18 @@ export default () => (
     <Helmet title="Get Ramen!" defer={false}>
       <html lang="en" />
       <meta name="description" content="Get Ramen!" />
+      <meta property="og:url" content="https://getramen.wtf" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Get Ramen!" />
+      <meta property="og:description" content="Get yo ramen!" />
+
+      <meta property="og:image" content="/image.png" />
+      <meta property="og:image:alt" content="Get that ramen!" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
     </Helmet>
-    <div class="bg">
+    <div className="bg">
       <Canvas
         camera={[0, 0, 5]}
         onCreated={({ gl }) => {
@@ -96,17 +106,17 @@ export default () => (
       </Canvas>
       <h1>
         <a
-          class="header-link"
+          className="header-link"
           href="https://www.google.com/maps/search/ramen/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="header-link__text">Get Ramen</span>
+          <span className="header-link__text">Get Ramen</span>
         </a>
       </h1>
-      <div class="group-links">
+      <div className="group-links">
         <a
-          class="github-link"
+          className="github-link"
           href="https://github.com/ARXChrono/gatsby-three-experiment"
           target="_blank"
           rel="noopener noreferrer"
@@ -114,7 +124,7 @@ export default () => (
           Github
         </a>
         <a
-          class="twitter-link"
+          className="twitter-link"
           href="https://twitter.com/devShaun"
           target="_blank"
           rel="noopener noreferrer"
