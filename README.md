@@ -2,4 +2,7 @@
 
 ![Preview Screenshot](screenshot.png)
 
-Just trying three js in gatsby, [view demo](https://gatsby-three-experiment-shaun.netlify.com/)
+Just a fun experiment using three js in gatsby, [view demo](https://getramen.wtf/)
+
+
+
